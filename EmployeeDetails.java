@@ -1,46 +1,43 @@
-package Week01;
+package Week02;
 
 class Employee{
 	String empName;
-    int empNo;
-    byte expYrs;
-    String gender;
-    double basicSalary;
-    double bonus;
-    double netSalary;
-    void setEmployee(String Name, int no, String sex, byte ex, double basicsalary){
-    	empName=Name;
-        empNo=no;
-        gender=sex;
-        expYrs=ex;
-        basicSalary=basicsalary;
-    }
-    void getEmployeeDetails()
-    {
-    	if(gender=="female"){
-    		bonus=basicSalary*10/100;
-            netSalary=basicSalary+bonus;
-            System.out.println(empName+"\t"+empNo+"\t"+gender+"\t"+expYrs+"\t" +basicSalary+"\t"+bonus+"\t"+netSalary+"\n");
-        }
-        else {
-        	netSalary=basicSalary;
-    	    System.out.println(empName+"\t"+empNo+"\t"+gender+"\t"+expYrs+"\t" +basicSalary+"\t"+bonus+"\t"+netSalary+"\n");
-        }
-    }
+	int empID;
+	byte expYrs;
+	String gender;
+	double basicSalary;
+	double bonus;
+	double netSalary;
+	void setEmployee(String eN,int eID,byte exp,String gend,double basicsal) {
+		empName=eN;
+		empID=eID;
+		expYrs=exp;
+		gender=gend;
+		basicSalary=basicsal;
+	}
+	void getEmployee() {
+		if(gender=="female") {
+			bonus=basicSalary*10/100;
+			netSalary=basicSalary+bonus;
+		}
+		else {
+			netSalary=basicSalary;
+		}
+		System.out.println(empName+"\t"+empID+"\t"+expYrs+"\t"+gender+"\t\t"+basicSalary+"\t"+bonus+"\t\t"+netSalary);
+	}
 }
 public class EmployeeDetails {
 
 	public static void main(String[] args) {
-		Employee Rahul=new Employee();
-		Rahul.setEmployee("Rahul", 128966,"male", (byte)20,100000.0d);
-		System.out.println("empName\tempNo\tgender\texpYrs\tbasicSalary\tbonus \tnetSalary\n");
-		Rahul.getEmployeeDetails();
-		Employee Rakesh=new Employee();
-		Rakesh.setEmployee("Rakesh", 7851161,"male", (byte)25,200000.0d);
-		Rakesh.getEmployeeDetails();
-		Employee madhu=new Employee();
-		madhu.setEmployee("Madhu", 7851161,"female", (byte)25,150000.0d);
-		madhu.getEmployeeDetails();
+		System.out.println("******************************************************************************************");
+		System.out.println("Name\tID\tExpYrs\tGender\t\tBasicSalary\tBonus\t\tNetSalary");
+		System.out.println("******************************************************************************************");
+		Employee emp1=new Employee();
+		Employee emp2=new Employee();
+		emp1.setEmployee("Surya",34,(byte)10,"male",100000.0d);
+		emp2.setEmployee("Manya",67,(byte)05,"female",150000.0d);
+		emp1.getEmployee();
+		emp2.getEmployee();
 	}
 
 }
